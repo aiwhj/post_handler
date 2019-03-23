@@ -1,0 +1,13 @@
+// $Id$
+// vim:ft=javascript
+
+// If your extension references something external, use ARG_WITH
+// ARG_WITH("post_handler", "for post_handler support", "no");
+
+// Otherwise, use ARG_ENABLE
+// ARG_ENABLE("post_handler", "enable post_handler support", "no");
+
+if (PHP_POST_HANDLER != "no") {
+	EXTENSION("post_handler", "post_handler.c", PHP_EXTNAME_SHARED, "/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1");
+}
+
